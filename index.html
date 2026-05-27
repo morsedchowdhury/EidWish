@@ -1,0 +1,384 @@
+Eid wish html code
+Create by:- Mohammad Morsed Chowdhury
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গ্রামীণ পরিবেশে কুরবানীর ঈদ শুভেচ্ছা কার্ড</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle, #11381c 0%, #041208 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        /* চারিদিকের মিউজিক ও উৎসবের গ্লোয়িং লাইট ইফেক্ট */
+        .ambient-light {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+        .light-1 { top: -5%; left: -5%; background: #ff0055; animation: lightMove1 4s infinite alternate; }
+        .light-2 { bottom: -5%; right: -5%; background: #00ffaa; animation: lightMove2 5s infinite alternate; }
+        .light-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 60%); animation: musicPulse 1.2s infinite; }
+
+        /* মূল উইশ কার্ড */
+        .card-container {
+            background: linear-gradient(145deg, #ffffff, #f7fbf7);
+            width: 95%;
+            max-width: 460px;
+            padding: 35px 20px;
+            border-radius: 24px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            text-align: center;
+            position: relative;
+            border: 4px solid #d4af37;
+            z-index: 10;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .top-deco {
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        /* ৩টি ধাপের ট্রানজিশন */
+        .step {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .step.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* প্রিমিয়াম বাটন */
+        .btn-next {
+            background: linear-gradient(135deg, #1b4d22, #0d2912);
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(27, 77, 34, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-next:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #d4af37, #aa8417);
+            color: #1b4d22;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- গ্রামীণ পরিবেশ সিনারিও (ধাপ ২) --- */
+        .village-scenery {
+            background: linear-gradient(to bottom, #87ceeb 0%, #b3e5fc 50%, #c8e6c9 50%, #81c784 100%);
+            border-radius: 20px;
+            padding: 20px 10px;
+            margin: 20px 0;
+            border: 2px solid #1b4d22;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+        }
+
+        .sun {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            font-size: 30px;
+            animation: sunGlow 3s infinite alternate ease-in-out;
+        }
+        .cloud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            opacity: 0.85;
+            animation: cloudFloat 4s infinite alternate ease-in-out;
+        }
+
+        .village-elements {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            padding: 0 15px;
+            position: absolute;
+            bottom: 65px;
+        }
+
+        .house { font-size: 42px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+        .tree { font-size: 45px; animation: windSway 3s infinite alternate ease-in-out; }
+
+        .characters-container {
+            position: relative;
+            z-index: 5;
+            margin-top: 75px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .row-family {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .row-animals {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .emoji {
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+
+        .family-member { font-size: 42px; animation: gentleSway 2s infinite alternate ease-in-out; }
+        .father { animation-delay: 0s; }
+        .mother { animation-delay: 0.3s; }
+        .son { animation-delay: 0.6s; }
+        .daughter { animation-delay: 0.9s; }
+
+        .animal { font-size: 55px; animation: animalIdle 1.5s infinite alternate ease-in-out; }
+        .cow { animation-delay: 0.2s; }
+        .goat { animation-delay: 0.7s; }
+
+        /* --- ধাপ ৩: ফাইনাল উইশ, হাদিস ও ডিজাইন --- */
+        .wish-title {
+            color: #1b4d22;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* হাদিস বক্সের জন্য বিশেষ স্টাইল */
+        .hadith-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 4px solid #d4af37;
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            margin: 15px 0;
+            text-align: justify;
+        }
+
+        .hadith-title {
+            font-weight: 700;
+            color: #1b4d22;
+            font-size: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .hadith-text {
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .wish-msg {
+            color: #222;
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        /* ডট ইন্ডিকেটর */
+        .indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: #d4af37;
+            width: 28px;
+            border-radius: 10px;
+        }
+
+        /* অ্যানিমেশন কী-ফ্রেমসমূহ */
+        @keyframes sunGlow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 4px #ffeb3b); }
+            100% { transform: scale(1.1); filter: drop-shadow(0 0 12px #ff9800); }
+        }
+
+        @keyframes cloudFloat {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(15px); }
+        }
+
+        @keyframes windSway {
+            0% { transform: rotate(-2deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        @keyframes lightMove1 {
+            0% { top: -5%; left: -5%; background: #ff0055; }
+            100% { top: 40%; left: 80%; background: #00e676; }
+        }
+        
+        @keyframes lightMove2 {
+            0% { bottom: -5%; right: -5%; background: #00ffaa; }
+            100% { bottom: 50%; right: 70%; background: #ffeb3b; }
+        }
+
+        @keyframes musicPulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes gentleSway {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        @keyframes animalIdle {
+            0% { transform: scaleY(1) translateY(0); }
+            100% { transform: scaleY(1.05) translateY(-4px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- চারিদিকের মিউজিক ও কালারফুল লাইট ইফেক্ট -->
+    <div class="ambient-light light-1"></div>
+    <div class="ambient-light light-2"></div>
+    <div class="ambient-light light-3"></div>
+
+    <div class="card-container" id="mainCard">
+        <div class="top-deco">✨ 🕌 🌙 🕌 ✨</div>
+
+        <!-- ধাপ ১: গেটওয়ে স্ক্রিন -->
+        <div class="step active" id="step1">
+            <h2 style="color: #1b4d22; margin-bottom: 15px; font-weight: 700;">পবিত্র ঈদুল আজহার শুভেচ্ছা</h2>
+            <p style="color: #666; margin-bottom: 30px;">গ্রামের সুন্দর পরিবেশে কুরবানীর খুশির আমেজ দেখতে নিচে ক্লিক করুন।</p>
+            <button class="btn-next" onclick="goToStep(2)">কার্ডটি খুলুন ✉️</button>
+        </div>
+
+        <!-- ধাপ ২: গ্রামীণ পরিবেশ ও কুরবানীর আমেজ -->
+        <div class="step" id="step2">
+            <div class="village-scenery">
+                <div class="sun">☀️</div>
+                <div class="cloud">☁️</div>
+                
+                <div class="village-elements">
+                    <div class="emoji tree">🌳</div>
+                    <div class="emoji house">🏡</div>
+                    <div class="emoji house">🏠</div>
+                    <div class="emoji tree">🌴</div>
+                </div>
+
+                <div class="characters-container">
+                    <div class="row-family">
+                        <div class="emoji family-member father">👨‍💼</div>
+                        <div class="emoji family-member mother">👩‍💼</div>
+                        <div class="emoji family-member son">👦🏻</div>
+                        <div class="emoji family-member daughter">👧🏻</div>
+                    </div>
+                    <div class="row-animals">
+                        <div class="emoji animal cow">🐂</div>
+                        <div class="emoji animal goat">🐐</div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="color: #555; margin-bottom: 25px;">কুরবানীর ত্যাগের মহিমায় ও আনন্দের ছোঁয়ায় ধন্য হোক এই ঈদ।</p>
+            <button class="btn-next" onclick="goToStep(3)">হাদিস ও শুভেচ্ছা বার্তা 🌟</button>
+        </div>
+
+        <!-- ধাপ ৩: ঈদ মোবারক উইশ ও হাদিস -->
+        <div class="step" id="step3">
+            <h1 class="wish-title">ঈদ মোবারক!</h1>
+            
+            <!-- কুরবানির হাদিস বক্স -->
+            <div class="hadith-box">
+                <span class="hadith-title">📜 কুরবানির ফজিলত সম্পর্কে হাদিস:</span>
+                <p class="hadith-text">
+                    রাসূলুল্লাহ (সাঃ) বলেছেন, "কুরবানীর পশুর রক্তের প্রথম ফোঁটা মাটিতে পড়ার আগেই আল্লাহ তাআলা কুরবানীদাতার গুনাহ মাফ করে দেন।" <br>
+                    <span style="display:block; text-align:right; font-size:11px; font-weight:bold; color:#777; margin-top:5px;">— (তিরমিযী ও ইবনে মাজাহ)</span>
+                </p>
+            </div>
+
+            <!-- সুন্দর শুভেচ্ছা বার্তা -->
+            <p class="wish-msg">
+                পবিত্র ঈদুল আজহার এই আনন্দঘন মুহূর্তে আপনার এবং আপনার পুরো পরিবারের ওপর বর্ষিত হোক আল্লাহর অসীম রহমত। কুরবানীর মহান ত্যাগের আদর্শে আমাদের জীবন সুন্দর ও কলুষমুক্ত হোক।
+                <span style="color: #aa8417; font-weight: bold; display: block; margin-top: 15px; font-size: 19px;">— আপনার ও আপনার পরিবারের জন্য শুভকামনা —</span>
+            </p>
+        </div>
+        <!-- প্রোগ্রেস ইন্ডিকেটর -->
+<!--  -->        <div class="indicator">
+            <div class="dot active" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
+            <div class="dot" id="dot3"></div>
+        </div>
+    </div>
+
+    <script>
+        function goToStep(stepNumber) {
+            const card = document.getElementById('mainCard');
+            card.style.transform = "scale(0.95) translateY(10px)";
+            
+            setTimeout(() => {
+                for (let i = 1; i <= 3; i++) {
+                    document.getElementById('step' + i).classList.remove('active');
+                    document.getElementById('dot' + i).classList.remove('active');
+                }
+                
+                document.getElementById('step' + stepNumber).classList.add('active');
+                document.getElementById('dot' + stepNumber).classList.add('active');
+                card.style.transform = "scale(1) translateY(0)";
+            }, 250);
+        }
+    </script>
+
+</body>
+  </html>
